@@ -1,7 +1,5 @@
-import React, { Suspense } from "react";
 import "./App.css";
-
-const Shows = React.lazy(() => import("./components/Shows"));
+import Shows from "./components/Shows";
 
 function App() {
   return (
@@ -9,9 +7,7 @@ function App() {
       <header className="App-header">
         <h1 className="App-title">React Suspense Demo</h1>
       </header>
-      <Suspense fallback={<p>loading...</p>}>
-        <Shows />
-      </Suspense>
+      <Shows />
     </div>
   );
 }
