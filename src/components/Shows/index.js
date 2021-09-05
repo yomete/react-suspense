@@ -3,6 +3,10 @@ import * as Styles from "./styles";
 
 const resource = fetchShows();
 
+const formatScore = (number) => {
+  return Math.round(number * 100);
+};
+
 const Shows = () => {
   const shows = resource.read();
 
@@ -21,7 +25,7 @@ const Shows = () => {
             <Styles.TextWrapper>
               <Styles.Title>{show.show.name}</Styles.Title>
               <Styles.Subtitle>
-                Score: {show.show.rating.average}
+                Score: {formatScore(show.score)}
               </Styles.Subtitle>
               <Styles.Subtitle>Status: {show.show.status}</Styles.Subtitle>
               <Styles.Subtitle>
