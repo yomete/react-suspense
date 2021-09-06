@@ -26,6 +26,7 @@ const Shows = () => {
 
   return (
     <Styles.Root>
+      {!isLoaded && <p>loading...</p>}
       {isLoaded && (
         <Styles.Container>
           {shows.map((show, index) => (
@@ -51,7 +52,6 @@ const Shows = () => {
           ))}
         </Styles.Container>
       )}
-      {!isLoaded && <p>loading...</p>}
     </Styles.Root>
   );
 };
